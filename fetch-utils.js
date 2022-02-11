@@ -7,3 +7,7 @@ function checkError({ data, error }) {
     return error ? console.error(error) : data;
 }
 
+export async function getCountries() {
+    const resp = await client.from('')
+}
+
