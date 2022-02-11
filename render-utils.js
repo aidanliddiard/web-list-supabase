@@ -33,11 +33,11 @@ export function renderCountryDetails(object) {
     ul.append(liPopulation, liCapital, liFact);
     const streetView = document.createElement('iframe');
     streetView.src = object.view;
-    streetView.width = '800';
-    streetView.height = '600';
-    streetView.style.border = `0`;
-    streetView.allowFullscreen = '';
-    streetView.loading = 'lazy';
+    // streetView.width = '800';
+    // streetView.height = '600';
+    // streetView.style.border = `0`;
+    // streetView.allowFullscreen = '';
+    // streetView.loading = 'lazy';
     div.append(img, h3, ul, streetView);
     return div;
 }
