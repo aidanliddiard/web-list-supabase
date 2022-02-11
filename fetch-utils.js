@@ -8,6 +8,11 @@ function checkError({ data, error }) {
 }
 
 export async function getCountries() {
-    const resp = await client.from('')
+    const resp = await client.from('Countries').select('*');
+    return checkError(resp);
 }
 
+export async function getCountryInfo(id) {
+    const resp = await client.from('Countries').select('*').eq('id', id).single();
+    return checkError(resp);
+}
