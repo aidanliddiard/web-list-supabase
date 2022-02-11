@@ -31,6 +31,13 @@ export function renderCountryDetails(object) {
     const liFact = document.createElement('li');
     liFact.textContent = `Fun Fact: ${object.fact}`;
     ul.append(liPopulation, liCapital, liFact);
-    div.append(img, h3, ul);
+    const streetView = document.createElement('iframe');
+    streetView.src = object.view;
+    streetView.width = '800';
+    streetView.height = '600';
+    streetView.style.border = `0`;
+    streetView.allowFullscreen = '';
+    streetView.loading = 'lazy';
+    div.append(img, h3, ul, streetView);
     return div;
 }
