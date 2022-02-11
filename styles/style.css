@@ -129,3 +129,8 @@ footer {
 .auth-container button {
     margin: 10px;
 }
+
+iframe {
+    width: 800px;
+    height: 600px;
+}
