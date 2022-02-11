@@ -8,11 +8,12 @@ const test = QUnit.test;
 test('time to test renderCountries function', (expect) => {
     //Arrange
     // Set up your arguments and expectations
-    const expected = '<div class="country"><img src="/assets/icons8-australia-96.png"><h3>Australia Facts</h3></div>';
+    const expected = '<a href="./other-page/?id=1"><div class="country"><img src="/assets/icons8-australia-96.png"><h3>Australia Facts</h3></div></a>';
     
     //Act 
     // Call the function you're testing and set the result to a const
     const actual = renderCountries ({
+        id: '1',
         name: 'Australia',
         img: '/assets/icons8-australia-96.png',
         population: '25.69 million',
