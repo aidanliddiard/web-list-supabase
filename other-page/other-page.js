@@ -1,9 +1,16 @@
-import { checkAuth, logout } from '../fetch-utils.js';
+import { getCountryInfo } from '../fetch-utils.js';
+import { renderCountryDetails } from '../render-utils.js';
 
-checkAuth();
+const countryInfo = document.querySelector('.country-info');
 
-const logoutButton = document.getElementById('logout');
 
-logoutButton.addEventListener('click', () => {
-    logout();
-});
+async function fetchCountryInfo() {
+    const params = new URLSearchParams(window.location.search);
+
+    const country = await getCountryInfo(params.get('id'));
+
+    const div = renderCountryDetails(country);
+    countryInfo.append(div);
+}
+
+fetchCountryInfo();

@@ -5,8 +5,14 @@ export function renderCountries(object){
     img.src = object.img;
     const h3 = document.createElement('h3');
     h3.textContent = `${object.name} Facts`;
+
+    const a = document.createElement('a');
+    a.href = `./other-page/?id=${object.id}`;
+
     div.append(img, h3);
-    return div;
+    a.append(div);
+
+    return a;
 }
 
 
